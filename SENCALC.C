@@ -387,6 +387,8 @@ BYTE
 
 ////////////////////////////////////////////////////////////
 
+int g_hex_mode=0;
+
 BYTE
  *Text2Dword( BYTE *s, DWORD *val, int base )
 {
@@ -404,6 +406,9 @@ BYTE
          prefix=2;
          base=16;
        }
+	   if(g_hex_mode){
+		   base=16;
+	   }
        switch( suffix=Text2DwordLastChar( s+prefix ) ){
          case 'i': case 'I': base=2;  break;
          case 'o': case 'O': base=8;  break;

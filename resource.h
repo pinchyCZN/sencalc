@@ -19,6 +19,7 @@
 #define IDC_STRING                      1012
 #define IDC_ONTOP                       1015
 #define IDC_64BIT                       1021
+#define IDC_HEX_MODE                    1022
 #define IDC_END                         -1
 
 // Next default values for new objects
@@ -27,7 +28,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        107
 #define _APS_NEXT_COMMAND_VALUE         40001
-#define _APS_NEXT_CONTROL_VALUE         1022
+#define _APS_NEXT_CONTROL_VALUE         1023
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

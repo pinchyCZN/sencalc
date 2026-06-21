@@ -126,6 +126,13 @@ Dlg_Proc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 			case IDCANCEL:
 				PostQuitMessage(0);
 				break;
+			case IDC_HEX_MODE:
+				{
+					if(HIWORD(wParam))
+						CheckDlgButton(hwnd,IDC_HEX_MODE,!IsDlgButtonChecked(hwnd,IDC_HEX_MODE));
+
+				}
+				break;
 			case IDC_64BIT:
 				{
 					if(HIWORD(wParam))
@@ -133,8 +140,12 @@ Dlg_Proc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 				}
 			case IDOK:
 				{
+					extern int g_hex_mode;
 					int is64bit;
+PROCESS_NUM:
 					is64bit=IsDlgButtonChecked(hwnd,IDC_64BIT);
+					g_hex_mode=IsDlgButtonChecked(hwnd,IDC_HEX_MODE);
+					
 					ComboBox_GetText( GetDlgItem( hwnd, IDC_INPUT ), buffer, sizeof( buffer ) );
 					ComboBox_AddString( GetDlgItem( hwnd, IDC_INPUT ), buffer );
 					
