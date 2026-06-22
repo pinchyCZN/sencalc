@@ -413,6 +413,7 @@ BYTE
          case 'i': case 'I': base=2;  break;
          case 'o': case 'O': base=8;  break;
          case 't': case 'T': base=10; break;
+         case 'u': case 'U': base=10; break;
          case 'h': case 'H': base=16; break;
          default:  suffix=0;
        }

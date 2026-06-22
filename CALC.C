@@ -96,9 +96,11 @@ Dlg_Proc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 			static int help_visible=FALSE;
 			if(!help_visible){
 				help_visible=TRUE;
-				MessageBox(hwnd,"suffix i=binary,o=octal,t=decimal,h=hex\n"
+				MessageBox(hwnd,"suffix i=binary,o=octal,t/u=decimal,h=hex\n"
 					"e.g. 011010i\n"
 					"not case sensitive\n\n"
+					"ALT+H or CTRL+H hex mode\n"
+					"ALT+6 or CTRL+6 64bit\n"
 					"ALT+HOME=on top\n"
 					"F5=64 bit","HELP",MB_OKCANCEL);
 				help_visible=FALSE;
@@ -130,7 +132,7 @@ Dlg_Proc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 				{
 					if(HIWORD(wParam))
 						CheckDlgButton(hwnd,IDC_HEX_MODE,!IsDlgButtonChecked(hwnd,IDC_HEX_MODE));
-
+					goto PROCESS_NUM;
 				}
 				break;
 			case IDC_64BIT:
